@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trademark App - User Flow & Process Management</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #f7f8fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        .main-container {
+            width: 100%;
+            max-width: 1200px;
+        }
+        .flow-diagram {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .flow-title {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .flow-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .flow-section {
+            flex: 1;
+        }
+        .flow-section-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+        }
+        .flow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .flow-step {
+            padding: 20px;
+            border-radius: 12px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .flow-step:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        .step-content {
+            display: flex;
+            align-items: center;
+        }
+        .step-number {
+            display: inline-flex;
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .step-text strong {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 1.1em;
+        }
+         .step-text div {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            color: #667eea;
+            margin: 0;
+            line-height: 1;
+        }
+
+        /* Client Journey Colors */
+        .flow-step.registration { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .flow-step.profile { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .flow-step.filing { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .flow-step.document { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .flow-step.payment { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .flow-step.submission { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+        .flow-step.tracking { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2c3e50;}
+        .flow-step.notification { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); color: #2c3e50;}
+
+        /* Admin Workflow Colors */
+        .flow-step.review { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+        .flow-step.management { background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); color: #2c3e50; }
+        .flow-step.status { background: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%); color: #2c3e50;}
+        .flow-step.communication { background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);}
+        .flow-step.reporting { background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);}
+        .flow-step.renewal { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #2c3e50;}
+
+        @media (max-width: 768px) {
+            .flow-container {
+                flex-direction: column;
+            }
+             body {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+    <div class="flow-diagram">
+        <h3 class="flow-title">User Flow & Process Management</h3>
+        <div class="flow-container">
+            <div class="flow-section">
+                <div class="flow-section-title">Client Application Journey</div>
+                <div class="flow-steps">
+                    <div class="flow-step registration"><div class="step-content"><span class="step-number">1</span><div class="step-text"><strong>User Registration</strong><div>Account creation with email/mobile verification</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step profile"><div class="step-content"><span class="step-number">2</span><div class="step-text"><strong>Profile Setup</strong><div>Business information and preferences</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step filing"><div class="step-content"><span class="step-number">3</span><div class="step-text"><strong>Application Creation</strong><div>Step-by-step trademark filing process</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step document"><div class="step-content"><span class="step-number">4</span><div class="step-text"><strong>Document Processing</strong><div>Upload, validation, and secure storage</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step payment"><div class="step-content"><span class="step-number">5</span><div class="step-text"><strong>Payment Integration</strong><div>Secure payment and receipt generation</div></div></div></div>
+                     <div class="arrow">↓</div>
+                    <div class="flow-step submission"><div class="step-content"><span class="step-number">6</span><div class="step-text"><strong>Government Submission</strong><div>Automated filing with trademark offices</div></div></div></div>
+                     <div class="arrow">↓</div>
+                    <div class="flow-step tracking"><div class="step-content"><span class="step-number">7</span><div class="step-text"><strong>Status Tracking</strong><div>Real-time updates from examination to registration</div></div></div></div>
+                     <div class="arrow">↓</div>
+                    <div class="flow-step notification"><div class="step-content"><span class="step-number">8</span><div class="step-text"><strong>Notification System</strong><div>Automated alerts for deadlines and changes</div></div></div></div>
+                </div>
+            </div>
+            <div class="flow-section">
+                <div class="flow-section-title">Administrative Workflow</div>
+                <div class="flow-steps">
+                    <div class="flow-step review"><div class="step-content"><span class="step-number">1</span><div class="step-text"><strong>Application Review</strong><div>Admin dashboard for verification</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step management"><div class="step-content"><span class="step-number">2</span><div class="step-text"><strong>Document Management</strong><div>Centralized document handling</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step status"><div class="step-content"><span class="step-number">3</span><div class="step-text"><strong>Status Updates</strong><div>Manual and automated progression</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step communication"><div class="step-content"><span class="step-number">4</span><div class="step-text"><strong>Client Communication</strong><div>Integrated messaging system</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step reporting"><div class="step-content"><span class="step-number">5</span><div class="step-text"><strong>Reporting & Analytics</strong><div>Business insights and metrics</div></div></div></div>
+                    <div class="arrow">↓</div>
+                    <div class="flow-step renewal"><div class="step-content"><span class="step-number">6</span><div class="step-text"><strong>Renewal Management</strong><div>Automated tracking and reminders</div></div></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
